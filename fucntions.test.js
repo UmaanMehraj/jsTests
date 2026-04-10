@@ -1,4 +1,4 @@
-import { capitalize, strRev, Calculator } from './functions'
+import { capitalize, strRev, Calculator, caesarCipher } from './functions'
 
 test('capitalize function', () => {
   expect(capitalize('hello')).toBe('Hello')
@@ -22,3 +22,18 @@ test('calculator: subtraction', () => {
 test('calculator: multiplication', () => {
   expect(obj.multiply(3,3)).toBe(9)
 })
+
+test('calcualtor: divsion', ()=>{
+    expect(obj.divide(2,2)).toBe(1)
+})
+
+test('calculator: division by zero', ()=>{
+    expect(obj.divide(3, 0)).toThrow(/^Division by Zero not possible$/)
+})
+
+
+test('Caesar Cipher', ()=>{
+  expect(caesarCipher('xyz', 3)).toBe('abc')
+})
+
+
