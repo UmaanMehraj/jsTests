@@ -1,4 +1,4 @@
-import { capitalize, strRev, Calculator, caesarCipher } from './functions'
+import { capitalize, strRev, Calculator, caesarCipher, analyzeArray } from './functions'
 
 test('capitalize function', () => {
   expect(capitalize('hello')).toBe('Hello')
@@ -36,4 +36,11 @@ test('Caesar Cipher', ()=>{
   expect(caesarCipher('xyz', 3)).toBe('abc')
 })
 
-
+test('Analyze Array', ()=>{
+  expect(analyzeArray([1, 2, 3])).toStrictEqual({
+    average: 2,
+    min: 1,
+    max: 3,
+    length: 3
+  })
+})

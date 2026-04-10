@@ -28,7 +28,7 @@ export function strRev(str) {
   return str.split('').reverse().join('')
 }
 
-export function caesarCipher (str, key){
+export function caesarCipher(str, key){
     let result = '';
     for (let char of str){
         if (/^[A-Z]$/.test(char)){
@@ -42,4 +42,26 @@ export function caesarCipher (str, key){
         }
     }
     return result
+}
+
+export function analyzeArray(array){
+  let length = 0, sum = 0
+  for (let i = 0; i < array.length; i++){
+    length++
+    sum+= array[i]
+  }
+  const min = array.reduce((prev, curr)=>{
+    return (prev < curr? prev : curr)
+  })
+  const max = array.reduce((prev, curr)=>{
+    return (prev > curr? prev : curr)
+  })
+  const avg = sum/length
+
+  return{
+    average: avg,
+    min: min,
+    max: max,
+    length: length
+  }
 }
